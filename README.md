@@ -3,6 +3,7 @@
 # 06 Server-Side APIs: Weather Dashboard
 
 
+
 ## User Story
 
 ```
@@ -11,10 +12,8 @@ I WANT to see the weather outlook for multiple cities
 SO THAT I can plan a trip accordingly
 ```
 
-## Acceptance Criteria
+## PSeudocoding 
 
-
-Used the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. 
 ```
 GIVEN a weather dashboard with form inputs
 WHEN I search for a city
@@ -29,19 +28,9 @@ WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 WHEN I open the weather dashboard
 THEN I am presented with the last searched city forecast
+
+Used the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. 
 ```
-
-The following image demonstrates the application functionality:
-
-![weather dashboard demo](./Assets/06-server-side-apis-homework-demo.png)
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
 
 ## Tech and Features Used
 
@@ -56,8 +45,6 @@ How to use
 ​Type in a cities name in the search bar and click search. on the right side of the screen you will see the current weather on a large card. underneath that card you will see the five day forecast. After you click search, a button will appear on the left side of the screen underneath the search bar with the name of the city that you just searched for. When you click on that button the right side of the screen will populate the weather information for that city. When you search for a new city the search button will generate a new history button underneath the search bar, and the old search button will move down a level. Everytime you search for a new city the same process will take place until you have reached five cities and then the oldest city button will dissapear.​
 
 Technical Overview
-​
-
 The search button triggers the ajax call to the open weather current weather api, the uv index api, the five day forecast weather api, and saves the city name to a variable,saves the city name to an array in local storage and if there is any information populated on any of the weather cards it clears that information.
 The openweather api will send back the weather information including the latitude and longitude for the city we are searching for.
 The uv index api is going to use the latitude and longitude information from the current weather api to give us the uv index.
@@ -66,6 +53,8 @@ the city name will be saved in local storage.
 there is a function that is called before the ajax calls that takes the saved information from local storage and loops through the city list array and creates a list of buttons with the name of the city on each button.
 the button will go through the same process of the seach button with the exception of saving the city name to the local storage array, and therefore does not create a new city button under the search bar.
 As the API calls finish the information needed (temperature, humidity, uv index and windspeed) populate the current weather card, as well as the five day forecast cards.
+
+
 Challenges
 Some of the challenges I faced:
 
